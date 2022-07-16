@@ -11,5 +11,11 @@ def say_hello2():
     print(name)
 
 
+def override_global_variable():
+    global PHOTO_FOLDER_PATH
+    PHOTO_FOLDER_PATH = "Csaba"
+
+
+# override_global_variable()
 say_hello()
 say_hello2()
