@@ -12,3 +12,6 @@ def say_hello2(name, phone, address):
 
 
 say_hello2("Robert", "06 20 555 6677", "Pécs")
+
+# string name = "Csaba"
+# int age = 30
