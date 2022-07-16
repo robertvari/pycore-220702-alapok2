@@ -9,8 +9,8 @@ print(sorted(name_list, key=lambda name: name.split()[-1]))
 
 
 student_list = {
-    1: {"name": "Robert", "rating": 2},
-    2: {"name": "Kriszta", "rating": 5},
-    3: {"name": "Csaba", "rating": 4},
-    4: {"name": "Tamás", "rating": 3},
+    1: {"name": "The Princess", "rating": 63},
+    2: {"name": "Spider-Man: No Way Home", "rating": 81},
+    3: {"name": "Morbius", "rating": 64},
+    4: {"name": "The Northman", "rating": 72},
 }
