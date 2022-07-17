@@ -9,16 +9,22 @@ GROUND_IMAGE_2_RECT = GROUND_IMAGE_1.get_rect(bottomleft=GROUND_IMAGE_1_RECT.bot
 
 
 def draw_ground(screen):
+    if GROUND_IMAGE_1_RECT.right < 0:
+        GROUND_IMAGE_1_RECT.bottomleft = GROUND_IMAGE_2_RECT.bottomright
+
+    if GROUND_IMAGE_2_RECT.right < 0:
+        GROUND_IMAGE_2_RECT.bottomleft = GROUND_IMAGE_1_RECT.bottomright
+
     # ground 1
     GROUND_IMAGE_1_RECT.x -= GROUND_SPEED
     screen.blit(GROUND_IMAGE_1, GROUND_IMAGE_1_RECT)
 
     # debug outline for GROUND_IMAGE_1_RECT
-    pygame.draw.rect(screen, "green", GROUND_IMAGE_1_RECT, 10)
+    # pygame.draw.rect(screen, "green", GROUND_IMAGE_1_RECT, 10)
 
     # ground 2
     GROUND_IMAGE_2_RECT.x -= GROUND_SPEED
     screen.blit(GROUND_IMAGE_1, GROUND_IMAGE_2_RECT)
 
     # debug outline for GROUND_IMAGE_2_RECT
-    pygame.draw.rect(screen, "blue", GROUND_IMAGE_2_RECT, 10)
+    # pygame.draw.rect(screen, "blue", GROUND_IMAGE_2_RECT, 10)
