@@ -4,6 +4,9 @@ from pygame import mixer
 pygame.init()
 mixer.init()
 
+# import game assets
+from game_assets.background import draw_background
+
 
 # set window size
 # tuple: (1200, 400)
@@ -27,6 +30,7 @@ def main():
             SCREEN.fill("black")
 
             # draw background image
+            draw_background()
 
             pygame.display.update()
             CLOCK.tick(FPS)
