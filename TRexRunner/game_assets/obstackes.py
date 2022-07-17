@@ -1,7 +1,7 @@
 import pygame
 from utilities.resources import get_resource_path
 
-CACTUS_IMAGE = pygame.image.load(get_resource_path("cactus_01.png")).convert()
+CACTUS_IMAGE = pygame.image.load(get_resource_path("cactus_01.png")).convert_alpha()
 
 
 def draw_cactus(screen):
