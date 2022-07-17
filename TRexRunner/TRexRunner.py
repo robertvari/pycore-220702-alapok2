@@ -21,11 +21,14 @@ def main():
     def game_loop():
         while True:
             # get input events
-            for event in pygame.event.get():
-                # exit game
-                if event.type == pygame.QUIT:
-                    pygame.quit()
-                    sys.exit()
+            check_events()
+
+    def check_events():
+        for event in pygame.event.get():
+            # exit game
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
 
     # start game_loop
     game_loop()
