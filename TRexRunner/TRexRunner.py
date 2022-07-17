@@ -13,14 +13,16 @@ SCREEN = pygame.display.set_mode(size=WINDOW_SIZE)
 # import game assets
 from game_assets.background import draw_background
 from game_assets.ground import draw_ground
-from game_assets.obstackes import draw_cactus, draw_bird
-from game_assets.trex import draw_trex, jump
+from game_assets.obstackes import draw_cactus, draw_bird, get_cactus_rect
+from game_assets.trex import draw_trex, jump, get_trex_rect
 
 # set window title
 pygame.display.set_caption(GAME_TITLE)
 
 # set screen fps
 CLOCK = pygame.time.Clock()
+
+GAME_OVER = False
 
 
 def main():
@@ -45,6 +47,9 @@ def main():
             # draw T-Rex
             draw_trex(SCREEN)
 
+            # run collision tests
+            check_collisions()
+
             pygame.display.update()
             CLOCK.tick(FPS)
 
@@ -63,6 +68,15 @@ def main():
             # SPACE event for jump
             if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
                 jump()
+
+    def check_collisions():
+        global GAME_OVER
+
+        trex_rect = get_trex_rect()
+        cactus_rect = get_cactus_rect()
+
+        if trex_rect.colliderect(cactus_rect):
+            GAME_OVER = True
 
     # start game_loop
     game_loop()

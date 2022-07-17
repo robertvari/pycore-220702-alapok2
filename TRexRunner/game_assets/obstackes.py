@@ -25,6 +25,10 @@ def draw_cactus(screen):
     pygame.draw.rect(screen, "red", CACTUS_RECT, 4)
 
 
+def get_cactus_rect():
+    return CACTUS_RECT
+
+
 def draw_bird(screen):
     global FRAME, BIRD_X_POS
 
