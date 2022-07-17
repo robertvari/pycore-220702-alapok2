@@ -14,7 +14,7 @@ SCREEN = pygame.display.set_mode(size=WINDOW_SIZE)
 from game_assets.background import draw_background
 from game_assets.ground import draw_ground
 from game_assets.obstackes import draw_cactus, draw_bird
-from game_assets.trex import draw_trex
+from game_assets.trex import draw_trex, jump
 
 # set window title
 pygame.display.set_caption(GAME_TITLE)
@@ -59,6 +59,10 @@ def main():
             if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
                 pygame.quit()
                 sys.exit()
+
+            # SPACE event for jump
+            if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
+                jump()
 
     # start game_loop
     game_loop()
