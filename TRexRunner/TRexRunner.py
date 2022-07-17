@@ -13,7 +13,7 @@ SCREEN = pygame.display.set_mode(size=WINDOW_SIZE)
 # import game assets
 from game_assets.background import draw_background
 from game_assets.ground import draw_ground
-from game_assets.obstackes import draw_cactus, draw_bird, get_cactus_rect
+from game_assets.obstackes import draw_cactus, draw_bird, get_cactus_rect, reset_cactus
 from game_assets.trex import draw_trex, jump, get_trex_rect
 from game_assets.gameover_screen import draw_game_over_screen
 
@@ -23,7 +23,7 @@ pygame.display.set_caption(GAME_TITLE)
 # set screen fps
 CLOCK = pygame.time.Clock()
 
-GAME_OVER = True
+GAME_OVER = False
 
 
 def main():
@@ -58,6 +58,8 @@ def main():
             CLOCK.tick(FPS)
 
     def check_events():
+        global GAME_OVER
+
         for event in pygame.event.get():
             # exit game with window X button
             if event.type == pygame.QUIT:
@@ -70,10 +72,10 @@ def main():
                 sys.exit()
 
             # SPACE event for jump
-            if GAME_OVER:
-                pass
-            else:
-                if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
+            if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
+                if GAME_OVER:
+                    GAME_OVER = False
+                else:
                     jump()
 
     def check_collisions():
@@ -84,6 +86,7 @@ def main():
 
         if trex_rect.colliderect(cactus_rect):
             GAME_OVER = True
+            reset_cactus()
 
     # start game_loop
     game_loop()

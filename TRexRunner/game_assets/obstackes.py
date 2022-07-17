@@ -29,6 +29,10 @@ def get_cactus_rect():
     return CACTUS_RECT
 
 
+def reset_cactus():
+    CACTUS_RECT.left = WINDOW_SIZE[0]
+
+
 def draw_bird(screen):
     global FRAME, BIRD_X_POS
 
