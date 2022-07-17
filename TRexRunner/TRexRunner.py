@@ -15,6 +15,7 @@ from game_assets.background import draw_background
 from game_assets.ground import draw_ground
 from game_assets.obstackes import draw_cactus, draw_bird, get_cactus_rect
 from game_assets.trex import draw_trex, jump, get_trex_rect
+from game_assets.gameover_screen import draw_game_over_screen
 
 # set window title
 pygame.display.set_caption(GAME_TITLE)
@@ -51,7 +52,7 @@ def main():
                 # run collision tests
                 check_collisions()
             else:
-                pass
+                draw_game_over_screen(SCREEN)
 
             pygame.display.update()
             CLOCK.tick(FPS)
@@ -69,8 +70,11 @@ def main():
                 sys.exit()
 
             # SPACE event for jump
-            if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
-                jump()
+            if GAME_OVER:
+                pass
+            else:
+                if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
+                    jump()
 
     def check_collisions():
         global GAME_OVER
