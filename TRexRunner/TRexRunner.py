@@ -4,13 +4,12 @@ from pygame import mixer
 pygame.init()
 mixer.init()
 
-# import game assets
-from game_assets.background import draw_background
-
-
 # set window size
 # tuple: (1200, 400)
 SCREEN = pygame.display.set_mode(size=(1200, 400))
+
+# import game assets
+from game_assets.background import draw_background
 
 # set window title
 pygame.display.set_caption("T-Rex Runner")
