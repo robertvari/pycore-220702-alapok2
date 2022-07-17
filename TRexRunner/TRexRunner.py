@@ -82,6 +82,9 @@ def main():
         global GAME_OVER
 
         trex_rect = get_trex_rect()
+
+        # pygame.draw.rect(SCREEN, "red", trex_rect, 4)
+
         cactus_rect = get_cactus_rect()
 
         if trex_rect.colliderect(cactus_rect):

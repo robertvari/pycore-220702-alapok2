@@ -34,11 +34,11 @@ def draw_trex(screen):
     TREX_IMAGE = TREX_FRAMES[int(FRAME)]
     screen.blit(TREX_IMAGE, TREX_RECT)
 
-    pygame.draw.rect(screen, "blue", TREX_RECT, 4)
+    # pygame.draw.rect(screen, "blue", TREX_RECT, 4)
 
 
 def get_trex_rect():
-    return TREX_RECT
+    return TREX_RECT.inflate(-150, -30)
 
 
 def jump():
