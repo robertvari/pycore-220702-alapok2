@@ -3,7 +3,7 @@ from utilities.resources import get_resource_path
 from utilities.settings import *
 
 CACTUS_IMAGE = pygame.image.load(get_resource_path("cactus_01.png")).convert_alpha()
-CACTUS_X_POS = 1000
+CACTUS_RECT = CACTUS_IMAGE.get_rect(x=WINDOW_SIZE[0], y=250)
 
 BIRD_FRAMES = [
     pygame.image.load(get_resource_path("bird_01.png")).convert_alpha(),
@@ -16,10 +16,11 @@ BIRD_X_POS = 1400
 
 
 def draw_cactus(screen):
-    global CACTUS_X_POS
+    if CACTUS_RECT.right < 0:
+        CACTUS_RECT.left = WINDOW_SIZE[0]
 
-    CACTUS_X_POS -= GROUND_SPEED
-    screen.blit(CACTUS_IMAGE, (CACTUS_X_POS, 250))
+    CACTUS_RECT.x -= GROUND_SPEED
+    screen.blit(CACTUS_IMAGE, CACTUS_RECT)
 
 
 def draw_bird(screen):
