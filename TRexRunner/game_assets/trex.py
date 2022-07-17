@@ -34,6 +34,8 @@ def draw_trex(screen):
     TREX_IMAGE = TREX_FRAMES[int(FRAME)]
     screen.blit(TREX_IMAGE, TREX_RECT)
 
+    pygame.draw.rect(screen, "blue", TREX_RECT, 4)
+
 
 def jump():
     global GRAVITY, ON_GROUND

@@ -22,6 +22,8 @@ def draw_cactus(screen):
     CACTUS_RECT.x -= GROUND_SPEED
     screen.blit(CACTUS_IMAGE, CACTUS_RECT)
 
+    pygame.draw.rect(screen, "red", CACTUS_RECT, 4)
+
 
 def draw_bird(screen):
     global FRAME, BIRD_X_POS
