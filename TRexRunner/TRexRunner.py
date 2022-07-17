@@ -25,8 +25,13 @@ def main():
 
     def check_events():
         for event in pygame.event.get():
-            # exit game
+            # exit game with window X button
             if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+
+            # exit game with ESC button
+            if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
                 pygame.quit()
                 sys.exit()
 
