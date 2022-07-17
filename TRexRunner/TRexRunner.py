@@ -15,3 +15,17 @@ pygame.display.set_caption("T-Rex Runner")
 # set screen fps
 FPS = 60
 CLOCK = pygame.time.Clock()
+
+
+def main():
+    def game_loop():
+        while True:
+            # get input events
+            for event in pygame.event.get():
+                # exit game
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    sys.exit()
+
+
+main()
