@@ -11,3 +11,7 @@ SCREEN = pygame.display.set_mode(size=(1200, 400))
 
 # set window title
 pygame.display.set_caption("T-Rex Runner")
+
+# set screen fps
+FPS = 60
+CLOCK = pygame.time.Clock()
