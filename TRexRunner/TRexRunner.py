@@ -22,7 +22,7 @@ pygame.display.set_caption(GAME_TITLE)
 # set screen fps
 CLOCK = pygame.time.Clock()
 
-GAME_OVER = False
+GAME_OVER = True
 
 
 def main():
@@ -32,23 +32,26 @@ def main():
             check_events()
 
             # clear previous screen
-            SCREEN.fill("black")
+            SCREEN.fill("#3282C1")
 
-            # draw background image
-            draw_background(SCREEN)
+            if not GAME_OVER:
+                # draw background image
+                draw_background(SCREEN)
 
-            # draw ground
-            draw_ground(SCREEN)
+                # draw ground
+                draw_ground(SCREEN)
 
-            # draw obstacles
-            draw_cactus(SCREEN)
-            # draw_bird(SCREEN)
+                # draw obstacles
+                draw_cactus(SCREEN)
+                # draw_bird(SCREEN)
 
-            # draw T-Rex
-            draw_trex(SCREEN)
+                # draw T-Rex
+                draw_trex(SCREEN)
 
-            # run collision tests
-            check_collisions()
+                # run collision tests
+                check_collisions()
+            else:
+                pass
 
             pygame.display.update()
             CLOCK.tick(FPS)
