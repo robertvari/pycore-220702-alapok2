@@ -23,6 +23,12 @@ def main():
             # get input events
             check_events()
 
+
+            # update screen graphics...
+
+
+            CLOCK.tick(FPS)
+
     def check_events():
         for event in pygame.event.get():
             # exit game with window X button
@@ -37,5 +43,6 @@ def main():
 
     # start game_loop
     game_loop()
+
 
 main()
