@@ -30,7 +30,7 @@ def main():
             SCREEN.fill("black")
 
             # draw background image
-            draw_background()
+            draw_background(SCREEN)
 
             pygame.display.update()
             CLOCK.tick(FPS)
