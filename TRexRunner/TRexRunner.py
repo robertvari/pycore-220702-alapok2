@@ -39,7 +39,7 @@ def main():
 
             # draw obstacles
             draw_cactus(SCREEN)
-            # draw_bird(SCREEN)
+            draw_bird(SCREEN)
 
             # draw T-Rex
             draw_trex(SCREEN)
