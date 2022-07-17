@@ -5,4 +5,4 @@ TREX_IMAGE = pygame.image.load(get_resource_path("trex_idle.png")).convert_alpha
 
 
 def draw_trex(screen):
-    screen.blit(TREX_IMAGE, (0, 0))
+    screen.blit(TREX_IMAGE, (0, 250))

@@ -11,7 +11,7 @@ SCREEN = pygame.display.set_mode(size=(1200, 400))
 # import game assets
 from game_assets.background import draw_background
 from game_assets.ground import draw_ground
-from game_assets.obstackes import draw_cactus
+from game_assets.obstackes import draw_cactus, draw_bird
 from game_assets.trex import draw_trex
 
 # set window title
@@ -39,6 +39,7 @@ def main():
 
             # draw obstacles
             draw_cactus(SCREEN)
+            draw_bird(SCREEN)
 
             # draw T-Rex
             draw_trex(SCREEN)
