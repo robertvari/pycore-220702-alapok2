@@ -4,9 +4,11 @@ from pygame import mixer
 pygame.init()
 mixer.init()
 
+from utilities.settings import *
+
 # set window size
 # tuple: (1200, 400)
-SCREEN = pygame.display.set_mode(size=(1200, 400))
+SCREEN = pygame.display.set_mode(size=WINDOW_SIZE)
 
 # import game assets
 from game_assets.background import draw_background
@@ -15,10 +17,9 @@ from game_assets.obstackes import draw_cactus, draw_bird
 from game_assets.trex import draw_trex
 
 # set window title
-pygame.display.set_caption("T-Rex Runner")
+pygame.display.set_caption(GAME_TITLE)
 
 # set screen fps
-FPS = 60
 CLOCK = pygame.time.Clock()
 
 
