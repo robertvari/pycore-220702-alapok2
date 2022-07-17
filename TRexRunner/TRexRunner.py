@@ -23,10 +23,12 @@ def main():
             # get input events
             check_events()
 
+            # clear previous screen
+            SCREEN.fill("black")
 
-            # update screen graphics...
+            # draw background image
 
-
+            pygame.display.update()
             CLOCK.tick(FPS)
 
     def check_events():
