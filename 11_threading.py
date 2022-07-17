@@ -19,6 +19,7 @@ def worker3():
     print("Worker3 finished!")
 
 
+# pass as reference
 t1 = threading.Thread(target=worker1)
 t2 = threading.Thread(target=worker2)
 t3 = threading.Thread(target=worker3)
@@ -26,3 +27,9 @@ t3 = threading.Thread(target=worker3)
 t1.start()
 t2.start()
 t3.start()
+
+# reference to the location in memory
+# worker1
+
+# call the function
+# worker1()
