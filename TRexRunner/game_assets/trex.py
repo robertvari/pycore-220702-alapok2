@@ -1,6 +1,9 @@
 import pygame
 from utilities.resources import get_resource_path
 
+JUMP_SOUND = pygame.mixer.Sound(get_resource_path("jump.wav"))
+JUMP_SOUND.set_volume(0.1)
+
 TREX_FRAMES = [
     pygame.image.load(get_resource_path("trex_run_01.png")).convert_alpha(),
     pygame.image.load(get_resource_path("trex_run_02.png")).convert_alpha()
@@ -38,5 +41,6 @@ def jump():
     if not ON_GROUND:
         return
 
-    GRAVITY -= 20
+    GRAVITY -= 23
+    JUMP_SOUND.play()
     ON_GROUND = False
