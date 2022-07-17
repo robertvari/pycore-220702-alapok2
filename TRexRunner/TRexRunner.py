@@ -27,5 +27,7 @@ def main():
                     pygame.quit()
                     sys.exit()
 
+    # start game_loop
+    game_loop()
 
 main()
